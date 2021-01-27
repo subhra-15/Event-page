@@ -1,99 +1,195 @@
+.bg {
+    animation:slide 3s ease-in-out infinite alternate;
+    background-image: linear-gradient(100deg, #8fc1e3 50%, #f7f9fb 50%);
+    bottom:0;
+    left:-50%;
+    opacity:.5;
+    position:fixed;
+    right:-50%;
+    top:0;
+    z-index:-1;
+}
+  
+.bg2 {
+    animation-direction:alternate-reverse;
+    animation-duration:4s;
+}
+  
+.bg3 {
+    animation-duration:5s;
+}
+  
+@keyframes slide {
+    0% {
+      transform:translateX(-25%);
+    }
+    100% {
+      transform:translateX(25%);
+    }
+}
+  /*Body*/
 body{
-    margin: 100;
-    padding: 0;
     display: flex;
-    justify-content:center;
+    justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background: #212121;
-    font-family: sans-serif;
-  }
-  .box{
-    width: 1200px;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-    grid-gap: 15px;
-    margin: 125px ;
-  }
-  .card{
+}
+  /*Conatiner*/
+.container{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 2000px;
+    flex-wrap: wrap;
+    z-index: 1;
+    margin-top: 15px;
+    padding-top: 10%;
+}
+  /*Image*/
+img{
+    width: 300px;
+    height: 200px;
+}
+  /*Conatiner & card*/
+.container .card{
     position: relative;
     width: 300px;
-    height: 350px;
-    background: #fff;
-    margin-bottom: 30px;
-    margin-top:30px;
-    border-radius: 4px;
-    box-shadow:0 2px 10px rgba(0,0,0,.2);
-  }
-  .card:before,
-  .card:after
-  {
-    content:"";
+    height: 200px;
+    margin: 20px;
+    box-shadow: 20px 20px 50px rgba(0, 0, 0, 0.5);
+    border-radius: 15px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    backdrop-filter:blur(5px);
+}
+
+.container .cardt{
+    position: relative;
+    width: 300px;
+    height: 30px;
+    font-size: 20px;
+    margin: 20px;
+    box-shadow: 20px 20px 50px rgba(0, 0, 0, 0.5);
+    border-radius: 15px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    backdrop-filter:blur(5px);
+}
+
+@media only screen and (min-width: 600px) {
+    .container .cardt{
+        position: relative;
+        width: 700px;
+        height: 30px;
+        font-size: 20px;
+        margin: 20px;
+        box-shadow: 20px 20px 50px rgba(0, 0, 0, 0.5);
+        border-radius: 15px;
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        backdrop-filter:blur(5px);
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    .container .cardt{
+        position: relative;
+        width: 1000px;
+        height: 30px;
+        font-size: 20px;
+        margin: 20px;
+        box-shadow: 20px 20px 50px rgba(0, 0, 0, 0.5);
+        border-radius: 15px;
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        backdrop-filter:blur(5px);
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+    .container .cardt{
+        position: relative;
+        width: 1200px;
+        height: 30px;
+        font-size: 20px;
+        margin: 20px;
+        box-shadow: 20px 20px 50px rgba(0, 0, 0, 0.5);
+        border-radius: 15px;
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        backdrop-filter:blur(5px);
+    }
+}
+
+
+.l1 {
+    color: #000080;
+}
+.l2 {
+    color: #191970;
+}
+.l3 {
+    color: #00008b;
+}
+.l4 {
+    color: #0000cd;
+}
+.l5 {
+    color: #4169e1;
+}
+.l6 {
+    color:#4682b4;
+}
+.l7 {
+    color: #6495ed;
+}
+.l8 {
+    color: #00bfff;
+}
+.waviy {
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    border-radius: 4px;
-    background: #fff;
-    transition: 0.5s;
-    z-index:-1;
-  }
-  .card:hover:before{
-  transform: rotate(20deg);
-  box-shadow: 0 2px 20px rgba(0,0,0,.2);
-  }
-  .card:hover:after{
-  transform: rotate(10deg);
-  box-shadow: 0 2px 20px rgba(0,0,0,.2);
-  }
-  .card .imgBx{
-  position: absolute;
-  top: 10px;
-  left: 10px;
-  bottom: 10px;
-  right: 10px;
-  background: #222;
-  transition: 0.5s;
-  z-index: 1;
-  }
-  
-  .card:hover .imgBx
-  {
-    bottom: 80px;
-  }
-
-  .card .imgBx img{
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-  }
-
-  .card .details{
-      position: absolute;
-      left: 10px;
-      right: 10px;
-      bottom: 10px;
-      height: 60px;
-      text-align: center;
-  }
-
-  .card .details h2{
-   margin: 0;
-   padding: 0;
-   font-weight: 600;
-   font-size: 20px;
-   color: #777;
-   text-transform: uppercase;
-  } 
-
-  .card .details h2 span{
-  font-weight: 500;
-  font-size: 16px;
-  color: #f38695;
-  display: block;
-  margin-top: 5px;
-   } 
+    top:0%;
+    left: 35%;
+}
+.waviy span {
+    position: relative;
+    display: inline-block;
+    font-size: 80px;
+    font-weight: bold;
+    text-transform: uppercase;
+    animation: flip 2s infinite;
+    animation-delay: calc(.2s * var(--i))
+}
+@media only screen and (max-width: 768px) {
+    .waviy {
+        position: absolute;
+        left: 20%;
+    }
+    .waviy span {
+        position: relative;
+        display: inline-block;
+        font-size: 40px;
+        font-weight: bold;
+            
+        text-transform: uppercase;
+        animation: flip 2s infinite;
+        animation-delay: calc(.2s * var(--i))
+    }
+}
+@keyframes flip {
+    0%,80% {
+        transform: rotateY(360deg) 
+    }
+}
+ 
